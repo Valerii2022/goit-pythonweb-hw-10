@@ -12,6 +12,7 @@ fastapi==0.115.11
 greenlet==3.1.1
 h11==0.14.0
 idna==3.10
+libgravatar==1.0.4
 Mako==1.3.9
 MarkupSafe==3.0.2
 passlib==1.7.4
@@ -21,6 +22,7 @@ pycparser==2.22
 pydantic==2.10.6
 pydantic_core==2.27.2
 python-jose==3.4.0
+python-multipart==0.0.20
 rsa==4.9
 six==1.17.0
 sniffio==1.3.1

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import date
 from typing import Optional
 
@@ -32,4 +32,19 @@ class ContactResponse(Contact):
     class Config:
         orm_mode = True
 
+class User(BaseModel):
+    id: int
+    username: str
+    email: str
+    avatar: str
 
+    model_config = ConfigDict(from_attributes=True)
+
+class UserCreate(BaseModel):
+    username: str
+    email: str
+    password: str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
