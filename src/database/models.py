@@ -1,7 +1,5 @@
-from datetime import datetime
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Table
-from sqlalchemy.orm import relationship, mapped_column, Mapped, DeclarativeBase
-from sqlalchemy.sql.schema import PrimaryKeyConstraint
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import  DeclarativeBase
 from sqlalchemy.sql.sqltypes import Date
 
 class Base(DeclarativeBase):
@@ -18,17 +16,5 @@ class Contact(Base):
     birth_date = Column(Date, nullable=False)
     additional_info = Column(String, nullable=True)
 
-class Tag(Base):
-    __tablename__ = "tags"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, unique=True, nullable=False)
-
-contact_m2m_tag = Table(
-    "contact_m2m_tag",
-    Base.metadata,
-    Column("contact_id", Integer, ForeignKey("contacts.id", ondelete="CASCADE")),
-    Column("tag_id", Integer, ForeignKey("tags.id", ondelete="CASCADE")),
-    PrimaryKeyConstraint("contact_id", "tag_id"),
-)
 
