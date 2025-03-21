@@ -1,9 +1,0 @@
-__pycache__/
-.env
-*.pyc
-*.pyo
-*.pyd
-migrations/
-.env
-.git
-.vscode

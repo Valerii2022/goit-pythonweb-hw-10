@@ -5,7 +5,8 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine,
 )
 from sqlalchemy.exc import SQLAlchemyError
-from src.conf.config import settings
+
+from src.conf.config import settings 
 
 class DatabaseSessionManager:
     def __init__(self, url: str):
@@ -28,6 +29,7 @@ class DatabaseSessionManager:
             raise  
         finally:
             await session.close()  
+
 
 sessionmanager = DatabaseSessionManager(settings.DB_URL)
 
