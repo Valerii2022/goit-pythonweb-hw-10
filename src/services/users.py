@@ -29,4 +29,7 @@ class UserService:
     
     async def confirmed_email(self, email: str):
         return await self.repository.confirmed_email(email)
+    
+    async def update_avatar_url(self, email: str, url: str):
+        return await self.repository.update_avatar_url(email, url)
 
